@@ -9,7 +9,8 @@ Sistema que **auxilia** o representante comercial do setor farmaceutico
 - Bootstrap
 - Javascript
 - Flask
-- *Linux* and *MacOS*
+- *Linux* and *MacOS* and *Windows*
+- Docker(Maybe)
 
 [Dev-](https://github.com/luuchowl)
 [Dev-](https://github.com/FernandoSLuz)
