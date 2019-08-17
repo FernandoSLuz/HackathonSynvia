@@ -11,7 +11,7 @@ Sistema que **auxilia** o representante comercial do setor farmaceutico
 - Flask
 - *Linux*
 
-[Dev-](https://github.com/luuchowl)
+[Dev-aaa](https://github.com/luuchowl)
 [Dev-](https://github.com/FernandoSLuz)
 [Dev-](https://github.com/dtofoli1)
 
