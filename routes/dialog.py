@@ -59,6 +59,6 @@ def dialog():
             return {'fulfillmentText': "Venda '"+ (form['queryResult']['queryText']) +"' cadastrada com sucesso!"}
         elif(str(intentName) == 'op4'):
             jobs = getProjects()
-            return {'fulfillmentText': jobs)
+            return {'fulfillmentText': jobs}
         else:
             return {'fulfillmentText': "Intent " + intentName + " not listed on our database"}
