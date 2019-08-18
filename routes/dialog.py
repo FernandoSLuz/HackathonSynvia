@@ -12,7 +12,7 @@ def dialog():
     
     req = request.get_json(silent=True, force=True)
 
-    print("Request:")
+
     res = (json.dumps(req, indent=4))
-    
+    print("Request:" + res)
     return {'users': res}
