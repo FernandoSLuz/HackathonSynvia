@@ -86,7 +86,7 @@
 <body class="app">
 	<div id="navbar">
 			<div id="top-menu">
-					<image src=""></image>
+					<image style="height: 80px; padding: 10px;" src={{url_for('static', filename = 'Images/Symbal-Logo-White.png')}}></image>
 			</div>
 	</div>
 
@@ -162,7 +162,7 @@
 		<a href="#" onclick="OpenTest()">TEST</a>
 	</div>
 
-	<div id="testPanel" style="background-color: #aaa; display: block; width: 320px; height: 582px; position: fixed; bottom: -582px; right: 20px;">
+	<div id="testPanel" style="background-color: #aaa; display: block; width: 320px; height: 582px; position: fixed; bottom: -582px; right: 20px; background-image: url({{url_for('static', filename = 'Images/SymbalTest.png')}});">
 		<a href="#" onclick="CloseTest()">Exit test</a>
 	</div>
 
