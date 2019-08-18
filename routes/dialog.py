@@ -19,7 +19,7 @@ def crudesqlalchemy_select():
     index = 0
     prod_Description = ""
     while index < len(jsonList):
-        prod_Description += str(jsonList[index]) + "\n"
+        prod_Description += ("Digite " + str(jsonList[index+1]["id"]) + " para selecionar" +  str(jsonList[index]["product_name"]) + ".\n\n")
         index = index + 1
     return prod_Description
 
