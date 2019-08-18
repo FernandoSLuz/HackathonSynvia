@@ -2,7 +2,7 @@ import json
 import os
 
 import flask
-from requests import post
+import requests as req
 from flask import request
 from sqlalchemy import (create_engine, MetaData, Table, Column, Integer, String, Date)
 
@@ -46,10 +46,9 @@ def dialog():
             data = {
                 'title':'memes'
                 } 
-            commits = post(url, data = data)
-            context = {
-                'title':'Python | Sysadmin',
-                'commits': commits.json() if commits.status_code == 200 else []
-            }
+            commits = req.post(url, data = data)
+            
+            return {'fulfillmentText': "Venda cadastrada com sucesso!"}
+
         else:
             return {'fulfillmentText': "Intent " + intentName + " not listed on our database"}
