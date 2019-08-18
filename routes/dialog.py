@@ -19,7 +19,8 @@ def crudesqlalchemy_select():
     index = 0
     prod_Description = ""
     while index < len(jsonList):
-        prod_Description += str(index) + "\n"
+        prod_Description += str(jsonList[index]) + "\n"
+        index = index + 1
     return prod_Description
 
 
@@ -35,7 +36,7 @@ def dialog():
         return {'fulfillmentText': '404'}
     else:
         intentName = form['queryResult']['intent']['displayName']
-        print("Passed2")
+        print("Passed3")
         if(str(intentName) == 'op1') :
             print(str_Products)
             return {'fulfillmentText': "Texto digitado: " + str_Products}
