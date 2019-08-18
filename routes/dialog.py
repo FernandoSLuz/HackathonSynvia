@@ -16,6 +16,10 @@ def dialog():
     if(res is 'null'):
         return {'fulfillmentText': 'response error'}
     else:
-        if(intentName is 'Teste') 
+        responseText = ''
         intentName = form['queryResult']['intent']['displayName']
-        return {'fulfillmentText': response}
+        if(intentName is 'Teste') :
+            responseText = form['queryResult']['queryText']
+            return {'fulfillmentText': "Texto digitado: " + responseText}
+        else:
+            return {'fulfillmentText': "Intent " + intentName + " not listed on our database"}
