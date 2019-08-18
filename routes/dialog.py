@@ -18,7 +18,7 @@ def dialog():
     else:
         responseText = ''
         intentName = form['queryResult']['intent']['displayName']
-        if(intentName == 'Teste') :
+        if(intentName == '1_saudacoes') :
             responseText = form['queryResult']['queryText']
             return {'fulfillmentText': "Texto digitado: " + responseText}
         else:
