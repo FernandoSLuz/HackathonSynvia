@@ -40,5 +40,15 @@ def dialog():
         if(str(intentName) == 'op1') :
             print(str_Products)
             return {'fulfillmentText': "Texto digitado: " + str_Products}
+        elif(str(intentName) == 'op3'):
+            url = 'https://ignixgamestudio-4b7b03.pipedrive.com/v1/deals?api_token=42661dec750e928978d39fb7a1c9d99350616b25'
+            data = {
+                'title':'memes'
+                } 
+            commits = request.POST(url, data = data)
+            context = {
+                'title':'Python | Sysadmin',
+                'commits': commits.json() if commits.status_code == 200 else []
+            }
         else:
             return {'fulfillmentText': "Intent " + intentName + " not listed on our database"}
