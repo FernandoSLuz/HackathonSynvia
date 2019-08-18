@@ -90,10 +90,11 @@
 			</div>
 	</div>
 
-	<div id="main-container">
+	<form method="POST" action="/products">
+		<div id="main-container">
 			<div style="margin-top: 150px;">
 					<div style="float: right" class="blue-button">
-						<a href="/newproduct">Novo Produto</a>
+						<a href="#">Novo Produto</a>
 						<a href="#">Nova Interação</a>
 					</div>
 					<div style="text-align: left" class="blue-button">
@@ -101,30 +102,25 @@
 					</div>
 
 					<br>
-
+					<div style="text-align: center;background-color: #8A8A8A; line-height: 45px; width: 100%; font-size: 24px;">
+							Cadastro de Produtos
+					</div>
 					<div>
-						<table width="100%" style="text-align: left; line-height: 30px;">
-							<tr style="background-color: #8A8A8A; color: #fff;">
-								<td>ID</td>
-								<td>Produto</td>
-								<td>Palavras-chave</td>
-								<td>Descrição</td>
+						<table width="100%" style="text-align: left; line-height: 30px; margin-top: 10px;">
+							<tr>
+								<td style="width: 33.3%; text-align: left; padding: 1px;"><textarea name="name" rows="10"  style="width: 100%; resize: none;  padding: 10px" placeholder="Nome do Produto"></textarea></td>
+								<td style="width: 33.3%;  padding: 1px 5px;text-align: center;"><textarea  name="tags" rows="10"  style="width: 100%; resize: none;  padding: 10px" placeholder="Palavras Chaves do Produto"></textarea></td>
+								<td style="width: 33.3%; padding: 1px; text-align: right;"><textarea name="description"  rows="10"  style="width: 100%; resize: none;  padding: 10px" placeholder="Insira uma descrição do seu produto"></textarea></td>
 							</tr>
-                            {% for project in context.users %}
-                            <tr style="background-color: #FFF">
-                                <td>{{ project.id }}</td>
-                                <td>{{ project.product_name }}</td>
-                                <td>{{ project.tags }}</td>
-                                <td>{{ project.description }}</td>
-                            </tr>
-                            {% endfor %}
 						</table>
 					</div>
-
+					<div>
+						<input type="submit" style="background-color: #3EE2FF; font-size: 16pt;border: none; color: #fff; padding: 5px 20px; width: 300px; font-weight: 100" value="INSERIR PRODUTO">
+					</div>
 			<div>
-	</div>
+		</div>
+	</form>
 
-	
 
 	<div id="bottom-menu">
 		<a href="#" onclick="OpenTest()">TEST</a>

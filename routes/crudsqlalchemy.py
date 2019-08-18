@@ -23,12 +23,36 @@ def alchemyencoder(obj):
     elif isinstance(obj, decimal.Decimal):
         return float(obj)
 
-@blueprint.route('/sqlalchemy', methods=[ 'POST' ])
+@blueprint.route('/products', methods=[ 'POST' ])
 def crudesqlalchemy_insert():
-    con.execute("INSERT INTO products VALUES(NULL ,'Vodka', 'aguardente TOP', 'O NECESSARIO')")
-    return{'result' : 200}
+    
+    name = request.form['name']
+    description = request.form['description']
+    tags = request.form['tags']
+    print(name)
+    
+    con.execute("INSERT INTO products VALUES(NULL ,'"+name+"', '"+tags+"', '"+description+"')")
+    selects = con.execute('SELECT * FROM products')
+    jsonList = ([dict(r) for r in selects])
+    #jsonList = json.loads(dictList)
+    #(selects).json()
+    print(jsonList)
+    context = {
+        'title': 'Python | Sysadmin',
+        'users': jsonList,
+    }
+    return flask.render_template('crudsqlalchemy.html', context=context)
+    
 
-@blueprint.route('/sqlalchemy', methods=[ 'GET' ])
+@blueprint.route('/newproduct', methods=[ 'GET' ])
+def render_new_product():
+    context = {
+        'title': 'Python | Sysadmin',
+        'users': 'Python | Sysadmin',
+    }
+    return flask.render_template('newproduct.html', context=context)
+
+@blueprint.route('/products', methods=[ 'GET' ])
 def crudesqlalchemy_select():
 
     selects = con.execute('SELECT * FROM products')
