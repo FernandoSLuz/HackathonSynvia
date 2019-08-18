@@ -20,19 +20,20 @@ def crudesqlalchemy_select():
     index = 0
     prod_Description = ""
     while index < len(jsonList):
-        prod_Description += ("Digite " + str(jsonList[index]["id"]) + " para selecionar" +  str(jsonList[index]["product_name"])+".\n")
+        prod_Description += (str(jsonList[index]["id"]) + " - " +  str(jsonList[index]["product_name"])+".\n\n")
         index = index + 1
     return prod_Description
 
 def getProjects():
     url = 'https://ignixgamestudio-4b7b03.pipedrive.com/v1/deals?api_token=42661dec750e928978d39fb7a1c9d99350616b25'
     commits = req.get(url)
+    sales = commits.json()
     index = 0
     prod_Description = ""
-    while index < len(commits["data"]):
-        prod_Description += ("Job " + str(commits["data"][index]["title"]) + ".\nAdicionado em: " + str(commits["data"][index]["add_time"]) +".\n")
+    while index < len(sales["data"]):
+        prod_Description += ("Job " + str(sales["data"][index]["title"]) + ".\n\nAdicionado em: " + str(sales["data"][index]["add_time"]) +".\n")
         index = index + 1
-    return jobs_Description
+    return prod_Description
 
 
 blueprint = flask.Blueprint('dialog', __name__)
