@@ -16,5 +16,5 @@ def dialog():
     if(res is 'null'):
         return {'fulfillmentText': 'response error'}
     else:
-        response = form['queryResult']['displayName']
+        response = form['responseId']
         return {'fulfillmentText': response}
