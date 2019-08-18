@@ -47,7 +47,7 @@ def dialog():
                 } 
             commits = req.post(url, data = data)
             
-            return {'fulfillmentText': "Venda '"+ (form['queryResult']['queryText'])str +"' cadastrada com sucesso!"}
+            return {'fulfillmentText': "Venda '"+ (form['queryResult']['queryText']) +"' cadastrada com sucesso!"}
 
         else:
             return {'fulfillmentText': "Intent " + intentName + " not listed on our database"}
