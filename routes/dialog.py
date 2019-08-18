@@ -16,12 +16,5 @@ def dialog():
     if(res is 'null'):
         return {'fulfillmentText': 'response error'}
     else:
-        required_attributes = [ 'displayName', 'queryText']
-        for attr in required_attributes:
-            if attr not in form:
-                return flask.jsonify({
-                    'fulfillmentText': 'attribute {} required'.format(attr)
-                }), 400
-        displayName, queryText = [form[key] for key in required_attributes ]        
-        response = displayName + ' ----  queryText: ' + queryText 
+        response = form['queryResult']['displayName']
         return {'fulfillmentText': response}
