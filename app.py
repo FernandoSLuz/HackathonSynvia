@@ -5,7 +5,7 @@ import time
 import flask
 import requests
 
-from routes.gitlab import blueprint as gitlab_blueprint
+from routes.dialog import blueprint as dialog_blueprint
 
 #logging.basicConfig(filename="/tmp/app.log",
 #        level=logging.DEBUG,
@@ -14,6 +14,8 @@ from routes.gitlab import blueprint as gitlab_blueprint
 #        datefmt="%Y-%m-%d %H:%M:%S")
 
 app = flask.Flask(__name__)
+
+app.register_blueprint(dialog_blueprint)
 app.debug = True
 
 @app.route('/')
