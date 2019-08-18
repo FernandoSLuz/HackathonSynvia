@@ -17,11 +17,11 @@ def dialog():
     for attr in required_attributes:
         if attr not in form:
             return flask.jsonify({
-                'message': 'attribute {} required'.format(attr)
+                'fulfillmentText': 'attribute {} required'.format(attr)
             }), 400
     displayName, queryText = [ form[key] for key in required_attributes ]
 
 
     print("Request:" + res)
-    response = 'diaplayName: ' + displayName + ' ----  queryText: ' + queryText 
+    response = displayName + ' ----  queryText: ' + queryText 
     return {'fulfillmentText': response}
