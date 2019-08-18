@@ -20,9 +20,19 @@ def crudesqlalchemy_select():
     index = 0
     prod_Description = ""
     while index < len(jsonList):
-        prod_Description += ("Digite " + str(jsonList[index]["id"]) + " para selecionar" +  str(jsonList[index]["product_name"])+".")
+        prod_Description += ("Digite " + str(jsonList[index]["id"]) + " para selecionar" +  str(jsonList[index]["product_name"])+".\n")
         index = index + 1
     return prod_Description
+
+def getProjects():
+    url = 'https://ignixgamestudio-4b7b03.pipedrive.com/v1/deals?api_token=42661dec750e928978d39fb7a1c9d99350616b25'
+    commits = req.get(url)
+    index = 0
+    prod_Description = ""
+    while index < len(commits["data"]):
+        prod_Description += ("Job " + str(commits["data"][index]["title"]) + ".\nAdicionado em: " + str(commits["data"][index]["add_time"] +".")
+        index = index + 1
+    return jobs_Description
 
 
 blueprint = flask.Blueprint('dialog', __name__)
@@ -47,6 +57,8 @@ def dialog():
             commits = req.post(url, data = data)
             
             return {'fulfillmentText': "Venda '"+ (form['queryResult']['queryText']) +"' cadastrada com sucesso!"}
-
+        elif(str(intentName) == 'op4'):
+            jobs = getProjects()
+            return {'fulfillmentText': jobs)
         else:
             return {'fulfillmentText': "Intent " + intentName + " not listed on our database"}
