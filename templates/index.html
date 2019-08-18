@@ -11,8 +11,16 @@
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/stylesheet.css">
 	<style>
+	body{
+		background: #ECECEC;
+		font-family: 'Lato', sans-serif;
+		font-weight: 200;
+		font-size: 12pt;
+	}
+
 	#navbar{
 	  display: block;
 	  position: absolute;
@@ -20,9 +28,9 @@
 	  left: 0;
 	  width: 100%;
 	  line-height: 40px;
-		height: 40px;
-		background-color: #333;
-		color: #fff;
+		height: 90px;
+		background-color: #3EE2FF;
+		color: #3EE2FF;
 	}
 
 	#top-menu{
@@ -40,7 +48,7 @@
 
 	.blue-button a{
 		text-decoration: none;
-		background-color: #408ae9;
+		background-color: #3EE2FF;
 		color: #fff;
 		display: inline-block;
 		margin: 3px 3px;
@@ -68,74 +76,47 @@
 		border-radius: 35px;
 	}
 
+	td{
+		padding: 3px 10px;
+	}
+
 	</style>
 </head>
 
 <body class="app">
 	<div id="navbar">
 			<div id="top-menu">
-					Topbar, logo, etc.
+					<image src=""></image>
 			</div>
 	</div>
 
 	<div id="main-container">
-			<div style="padding-top: 100px;">
-					<div style="text-align: right" class="blue-button">
+			<div style="margin-top: 150px;">
+					<div style="float: right" class="blue-button">
+						<a href="#">Novo Produto</a>
 						<a href="#">Nova Interação</a>
 					</div>
+					<div style="text-align: left" class="blue-button">
+						<a href="#">Estatísticas</a>
+					</div>
+
 					<br>
 
 					<div>
-						<table width="100%">
-							<tr>
+						<table width="100%" style="text-align: left; line-height: 30px;">
+							<tr style="background-color: #8A8A8A; color: #fff;">
 								<td>Questão</td>
 								<td>Solicitações</td>
 								<td>Total por Dia</td>
 								<td>Total não resolvida</td>
 							</tr>
-							<tr>
+							<tr style="background-color: #FFF">
 								<td>Lorem Ipsum Pornem Labaxurias...</td>
 								<td>411</td>
-								<td>(gráfico)</td>
+								<td><img src=""></td>
 								<td>133</td>
 							</tr>
-							<tr>
-								<td>Lorem Ipsum Pornem Labaxurias...</td>
-								<td>411</td>
-								<td>(gráfico)</td>
-								<td>133</td>
-							</tr>
-							<tr>
-								<td>Lorem Ipsum Pornem Labaxurias...</td>
-								<td>411</td>
-								<td>(gráfico)</td>
-								<td>133</td>
-							</tr>
-							<tr>
-								<td>Lorem Ipsum Pornem Labaxurias...</td>
-								<td>411</td>
-								<td>(gráfico)</td>
-								<td>133</td>
-							</tr>
-							<tr>
-								<td>Lorem Ipsum Pornem Labaxurias...</td>
-								<td>411</td>
-								<td>(gráfico)</td>
-								<td>133</td>
-							</tr>
-							<tr>
-								<td>Lorem Ipsum Pornem Labaxurias...</td>
-								<td>411</td>
-								<td>(gráfico)</td>
-								<td>133</td>
-							</tr>
-							<tr>
-								<td>Lorem Ipsum Pornem Labaxurias...</td>
-								<td>411</td>
-								<td>(gráfico)</td>
-								<td>133</td>
-							</tr>
-							<tr>
+							<tr style="background-color: #FFF">
 								<td>Lorem Ipsum Pornem Labaxurias...</td>
 								<td>411</td>
 								<td>(gráfico)</td>
@@ -147,12 +128,43 @@
 			<div>
 	</div>
 
+	<div id="main-container">
+			<div style="margin-top: 150px;">
+					<div style="float: right" class="blue-button">
+						<a href="#">Novo Produto</a>
+						<a href="#">Nova Interação</a>
+					</div>
+					<div style="text-align: left" class="blue-button">
+						<a href="#">Estatísticas</a>
+					</div>
 
-	<div id="bottom-menu">
-		<a href="#">B.O.</a>
-		<a href="#">Test</a>
+					<br>
+					<div style="text-align: center;background-color: #8A8A8A; line-height: 45px; width: 100%; font-size: 24px;">
+							Cadastro de Produtos
+					</div>
+					<div>
+						<table width="100%" style="text-align: left; line-height: 30px; margin-top: 10px;">
+							<tr>
+								<td style="width: 33.3%; text-align: left; padding: 1px;"><textarea  rows="10"  style="width: 100%; resize: none;  padding: 10px" placeholder="Nome do Produto"></textarea></td>
+								<td style="width: 33.3%;  padding: 1px 5px;text-align: center;"><textarea  rows="10"  style="width: 100%; resize: none;  padding: 10px" placeholder="Palavras Chaves do Produto"></textarea></td>
+								<td style="width: 33.3%; padding: 1px; text-align: right;"><textarea  rows="10"  style="width: 100%; resize: none;  padding: 10px" placeholder="Insira uma descrição do seu produto"></textarea></td>
+							</tr>
+						</table>
+					</div>
+					<div>
+						<input type="submit" style="background-color: #3EE2FF; font-size: 16pt;border: none; color: #fff; padding: 5px 20px; width: 300px; font-weight: 100" value="INSERIR PRODUTO">
+					</div>
+			<div>
 	</div>
 
+
+	<div id="bottom-menu">
+		<a href="#" onclick="OpenTest()">TEST</a>
+	</div>
+
+	<div id="testPanel" style="background-color: #aaa; display: block; width: 320px; height: 582px; position: fixed; bottom: -582px; right: 20px;">
+		<a href="#" onclick="CloseTest()">Exit test</a>
+	</div>
 
 	{% block header %}
 
@@ -163,10 +175,25 @@
 		{% endblock %}
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script>
+			function CloseTest(){
+				$('#testPanel').animate({bottom: '-582'}, 300,  function() { });
+				console.log('fechei');
+			}
+			function OpenTest(){
+				$('#testPanel').animate({bottom: '0'}, 300,  function() { });
+				console.log('abri');
+			}
 
+	</script>
 	{% block scripts %}
 
 	{% endblock %}
