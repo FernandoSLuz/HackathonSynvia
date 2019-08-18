@@ -4,14 +4,17 @@
         <table class="table table-striped">
             <thead>
                 <th>
-                    <td>Nome</td>
-                    <td>Data</td>
+                    <td>ID</td>
+                    <td>Nome do Produto</td>
+                    <td>Descrição</td>
                 </th>
             </thead>
             <tbody>
                 {% for project in context.users %}
                 <tr>
+                    <td>{{ project.id }}</td>
                     <td>{{ project.product_name }}</td>
+                    <td>{{ project.description }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
