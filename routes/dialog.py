@@ -20,7 +20,7 @@ def crudesqlalchemy_select():
     index = 0
     prod_Description = ""
     while index < len(jsonList):
-        prod_Description += (str(jsonList[index]["id"]) + " - " +  str(jsonList[index]["product_name"])+".\n\n")
+        prod_Description += (str(jsonList[index]["id"]) + " - " +  str(jsonList[index]["product_name"])+".\n")
         index = index + 1
     return prod_Description
 
@@ -48,7 +48,7 @@ def dialog():
     else:
         intentName = form['queryResult']['intent']['displayName']
         if(str(intentName) == 'op1') :
-            return {'fulfillmentText': "Texto digitado: " + str_Products}
+            return {'fulfillmentText': str_Products}
         elif(str(intentName) == 'op3_fallback'):
             salesName = form['queryResult']['queryText']
             url = 'https://ignixgamestudio-4b7b03.pipedrive.com/v1/deals?api_token=42661dec750e928978d39fb7a1c9d99350616b25'
