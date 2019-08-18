@@ -6,6 +6,7 @@ import flask
 import requests
 
 from routes.dialog import blueprint as dialog_blueprint
+from routes.mysql import blueprint as mysql_blueprint
 
 #logging.basicConfig(filename="/tmp/app.log",
 #        level=logging.DEBUG,
@@ -16,6 +17,7 @@ from routes.dialog import blueprint as dialog_blueprint
 app = flask.Flask(__name__)
 
 app.register_blueprint(dialog_blueprint)
+app.register_blueprint(mysql_blueprint)
 app.debug = True
 
 @app.route('/')

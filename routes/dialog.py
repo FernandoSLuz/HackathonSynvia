@@ -4,9 +4,7 @@ import os
 import flask
 from flask import request
 
-
-blueprint = flask.Blueprint('auth', __name__)
-
+blueprint = flask.Blueprint('dialog', __name__)
 @blueprint.route('/dialog', methods=[ 'GET', 'POST' ])
 def dialog():
     
