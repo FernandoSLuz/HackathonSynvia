@@ -39,7 +39,7 @@ def dialog():
         intentName = form['queryResult']['intent']['displayName']
         if(str(intentName) == 'op1') :
             return {'fulfillmentText': "Texto digitado: " + str_Products}
-        elif(str(intentName) == 'op3_venda'):
+        elif(str(intentName) == 'op3_fallback'):
             salesName = form['queryResult']['queryText']
             url = 'https://ignixgamestudio-4b7b03.pipedrive.com/v1/deals?api_token=42661dec750e928978d39fb7a1c9d99350616b25'
             data = {
