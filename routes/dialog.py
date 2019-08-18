@@ -2,6 +2,7 @@ import json
 import os
 
 import flask
+from requests import post
 from flask import request
 from sqlalchemy import (create_engine, MetaData, Table, Column, Integer, String, Date)
 
@@ -45,7 +46,7 @@ def dialog():
             data = {
                 'title':'memes'
                 } 
-            commits = request.POST(url, data = data)
+            commits = post(url, data = data)
             context = {
                 'title':'Python | Sysadmin',
                 'commits': commits.json() if commits.status_code == 200 else []
