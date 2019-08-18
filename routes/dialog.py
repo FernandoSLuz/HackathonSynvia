@@ -15,10 +15,4 @@ def dialog():
 
     res = (json.dumps(req, indent=4))
     print("Request:" + res)
-    return {
-        "speech": res,
-        "displayText": "testeeee",
-        #"data": {},
-        #"contextOut": [],
-        "source": "BankRates"
-    }
+    return {'fulfillmentText': 'This is a response from webhook.'}
