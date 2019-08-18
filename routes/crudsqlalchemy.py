@@ -22,7 +22,7 @@ con = engine.connect()
 @blueprint.route('/sqlalchemy', methods=[ 'GET' ])
 def crudesqlalchemy_insert():
     con.execute("INSERT INTO usuario VALUES(NULL ,'Sarahhhhhh', '1982-05-25')")
-    return{'result' : 'Done'}
+    return{'result' : 200}
 
 @blueprint.route('/sqlalchemy', methods=[ 'POST' ])
 def crudesqlalchemy_select():
@@ -30,5 +30,5 @@ def crudesqlalchemy_select():
     for item in select:
         print(item)
     
-    return{'result' : 'Done'}
+    return{'result' : 200}
 
