@@ -1,5 +1,6 @@
 import json
 import os
+import decimal, datetime
 
 import flask
 from flask import request
@@ -11,24 +12,34 @@ blueprint = flask.Blueprint('sqlalchemy', __name__)
 engine = create_engine('mysql+pymysql://hacka:admin@localhost/symbal', echo=False)
 metadata = MetaData(bind=engine)
 
-user_table = Table('usuario', metadata, Column('id', Integer, primary_key=True), 
-                    Column('nome', String(50)),
-                    Column('dtnasc', Date)
-)
 metadata.create_all(engine)
 
 con = engine.connect()
 
-@blueprint.route('/sqlalchemy', methods=[ 'GET' ])
-def crudesqlalchemy_insert():
-    con.execute("INSERT INTO usuario VALUES(NULL ,'Sarahhhhhh', '1982-05-25')")
-    return{'result' : 200}
+def alchemyencoder(obj):
+    """JSON encoder function for SQLAlchemy special classes."""
+    if isinstance(obj, datetime.date):
+        return obj.isoformat()
+    elif isinstance(obj, decimal.Decimal):
+        return float(obj)
 
 @blueprint.route('/sqlalchemy', methods=[ 'POST' ])
-def crudesqlalchemy_select():
-    select = con.execute('SELECT * FROM usuario')
-    for item in select:
-        print(item)
-    
+def crudesqlalchemy_insert():
+    con.execute("INSERT INTO products VALUES(NULL ,'Vodka', 'aguardente TOP', 'O NECESSARIO')")
     return{'result' : 200}
 
+@blueprint.route('/sqlalchemy', methods=[ 'GET' ])
+def crudesqlalchemy_select():
+
+    selects = con.execute('SELECT * FROM usuario')
+    jsonList = ([dict(r) for r in selects])
+    #jsonList = json.loads(dictList)
+    #(selects).json()
+    print(jsonList)
+    context = {
+        'title': 'Python | Sysadmin',
+        'users': jsonList,
+    }
+    return flask.render_template('crudsqlalchemy.html', context=context)
+
+    

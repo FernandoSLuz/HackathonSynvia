@@ -1,0 +1,23 @@
+{% block content %}
+<div class="card shadow">
+    <div class="card shadow">
+        <table class="table table-striped">
+            <thead>
+                <th>
+                    <td>Nome</td>
+                    <td>Data</td>
+                </th>
+            </thead>
+            <tbody>
+                {% for project in context.users %}
+                <tr>
+                    <td>{{ project.nome }}</td>
+                    a
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
