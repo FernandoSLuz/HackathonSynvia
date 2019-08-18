@@ -30,7 +30,7 @@ def getProjects():
     index = 0
     prod_Description = ""
     while index < len(commits["data"]):
-        prod_Description += ("Job " + str(commits["data"][index]["title"]) + ".\nAdicionado em: " + str(commits["data"][index]["add_time"] +".")
+        prod_Description += ("Job " + str(commits["data"][index]["title"]) + ".\nAdicionado em: " + str(commits["data"][index]["add_time"]) +".\n")
         index = index + 1
     return jobs_Description
 
