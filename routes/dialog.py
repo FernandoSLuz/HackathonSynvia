@@ -31,9 +31,11 @@ def dialog():
     res = (json.dumps(form, indent=3))
     str_Products = crudesqlalchemy_select()
     if(res is 'null'):
+        print("Passed2")
         return {'fulfillmentText': '404'}
     else:
         intentName = form['queryResult']['intent']['displayName']
+        print("Passed2")
         if(str(intentName) == 'op1') :
             print(str_Products)
             return {'fulfillmentText': "Texto digitado: " + str_Products}
