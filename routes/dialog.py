@@ -11,6 +11,7 @@ blueprint = flask.Blueprint('auth', __name__)
 def dialog():
     
     form = request.get_json(silent=True, force=True)
+    res = (json.dumps(form, indent=4))
     required_attributes = [ 'displayName', 'queryText']
 
     for attr in required_attributes:
@@ -20,7 +21,7 @@ def dialog():
             }), 400
     displayName, queryText = [ form[key] for key in required_attributes ]
 
-    res = (json.dumps(form, indent=4))
+
     print("Request:" + res)
     response = 'diaplayName: ' + displayName + ' ----  queryText: ' + queryText 
     return {'fulfillmentText': response}
