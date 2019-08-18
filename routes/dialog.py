@@ -36,7 +36,7 @@ def dialog():
         responseText = ''
         intentName = form['queryResult']['intent']['displayName']
         if(str(intentName) == 'op1') :
-            responseText = form['queryResult']['queryText']
+            print(str_Products)
             return {'fulfillmentText': "Texto digitado: " + str_Products}
         else:
             return {'fulfillmentText': "Intent " + intentName + " not listed on our database"}
