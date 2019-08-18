@@ -29,15 +29,14 @@ def dialog():
     
     form = request.get_json(silent=True, force=True)
     res = (json.dumps(form, indent=3))
-    print("Request:" + res)
     str_Products = crudesqlalchemy_select()
     if(res is 'null'):
-        return {'fulfillmentText': str_Products}
+        return {'fulfillmentText': '404'}
     else:
         responseText = ''
         intentName = form['queryResult']['intent']['displayName']
         if(str(intentName) == 'op1') :
             responseText = form['queryResult']['queryText']
-            return {'fulfillmentText': "Texto digitado: " + responseText}
+            return {'fulfillmentText': "Texto digitado: " + str_Products}
         else:
             return {'fulfillmentText': "Intent " + intentName + " not listed on our database"}
