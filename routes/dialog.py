@@ -26,14 +26,13 @@ def crudesqlalchemy_select():
 blueprint = flask.Blueprint('dialog', __name__)
 @blueprint.route('/dialog', methods=[ 'GET', 'POST' ])
 def dialog():
-    
+    print("Passed")
     form = request.get_json(silent=True, force=True)
     res = (json.dumps(form, indent=3))
     str_Products = crudesqlalchemy_select()
     if(res is 'null'):
         return {'fulfillmentText': '404'}
     else:
-        responseText = ''
         intentName = form['queryResult']['intent']['displayName']
         if(str(intentName) == 'op1') :
             print(str_Products)
