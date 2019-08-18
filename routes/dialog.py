@@ -30,7 +30,6 @@ blueprint = flask.Blueprint('dialog', __name__)
 def dialog():
     
     form = request.get_json(silent=True, force=True)
-    print(form)
     res = (json.dumps(form, indent=3))
     str_Products = crudesqlalchemy_select()
     if(res is 'null'):
