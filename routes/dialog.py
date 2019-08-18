@@ -15,4 +15,10 @@ def dialog():
 
     res = (json.dumps(req, indent=4))
     print("Request:" + res)
-    return {'users': res}
+    return {
+        "speech": res,
+        "displayText": "testeeee",
+        #"data": {},
+        #"contextOut": [],
+        "source": "BankRates"
+    }
