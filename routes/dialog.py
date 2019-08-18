@@ -10,9 +10,17 @@ blueprint = flask.Blueprint('auth', __name__)
 @blueprint.route('/dialog', methods=[ 'GET', 'POST' ])
 def dialog():
     
-    req = request.get_json(silent=True, force=True)
+    form = request.get_json(silent=True, force=True)
+    required_attributes = [ 'displayName', 'queryText']
 
+    for attr in required_attributes:
+        if attr not in form:
+            return flask.jsonify({
+                'message': 'attribute {} required'.format(attr)
+            }), 400
+    displayName, queryText = [ form[key] for key in required_attributes ]
 
-    res = (json.dumps(req, indent=4))
+    res = (json.dumps(form, indent=4))
     print("Request:" + res)
-    return {'fulfillmentText': 'This is a response from webhook.'}
+    response = 'diaplayName: ' + displayName + ' ----  queryText: ' + queryText 
+    return {'fulfillmentText': response}
