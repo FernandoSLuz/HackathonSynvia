@@ -31,7 +31,7 @@ def crudesqlalchemy_insert():
 @blueprint.route('/sqlalchemy', methods=[ 'GET' ])
 def crudesqlalchemy_select():
 
-    selects = con.execute('SELECT * FROM usuario')
+    selects = con.execute('SELECT * FROM products')
     jsonList = ([dict(r) for r in selects])
     #jsonList = json.loads(dictList)
     #(selects).json()
